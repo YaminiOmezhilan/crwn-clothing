@@ -4,6 +4,7 @@ import {
   Preview,
   Title,
 } from './category-preview.styles';
+
 const CategoryPreview = ({ title, products }) => {
   return (
     <CategoryPreviewContainer>
