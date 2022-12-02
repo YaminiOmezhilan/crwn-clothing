@@ -1,6 +1,13 @@
+import { CartItem as TcartItem } from '../../store/cart/cart.types';
 import { CartItemContainer, ItemDetails } from './cart-item.styles';
 
-const CartItem = ({ cartItem: { name, imageUrl, price, quantity } }) => (
+type CartItemProps = {
+  cartItem: TcartItem;
+};
+
+const CartItem = ({
+  cartItem: { name, imageUrl, price, quantity },
+}: CartItemProps) => (
   <CartItemContainer>
     <img src={imageUrl} alt={`${name}`} />
     <ItemDetails>

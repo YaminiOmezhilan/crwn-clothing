@@ -8,10 +8,15 @@ import {
   Price,
 } from './product-card.styles';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
+import { CategoryItem } from '../../store/categories/category.types';
 
-const ProductCard = ({ product }) => {
-  const dispatch = useDispatch();
+type ProductCardProps = {
+  product: CategoryItem;
+};
+
+const ProductCard = ({ product }: ProductCardProps) => {
   const { price, name, imageUrl } = product;
+  const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
   const addProductToCart = () => dispatch(addItemToCart(cartItems, product));
 

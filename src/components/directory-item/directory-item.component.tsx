@@ -5,7 +5,14 @@ import {
   DirectoryItemContainer,
 } from './directory-item.styles';
 
-const DirectoryItem = ({ category: { title, id, imageUrl, route } }) => {
+import { DirectoryCategory } from '../directory/directory.component';
+
+type DirectoryItemProps = {
+  category: DirectoryCategory;
+};
+
+const DirectoryItem = ({ category }: DirectoryItemProps) => {
+  const { title, imageUrl, route } = category;
   const navigate = useNavigate();
   const onNavigateHandler = () => navigate(route);
   return (
